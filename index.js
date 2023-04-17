@@ -24,6 +24,13 @@ app.get("/", (request, response) => {
     response.json(data)
 })
 
+// GET with routing parameters
+app.get("/class/:id", (request, response) => {
+    const studentId = Number(request.params.id);
+    const student = null
+    student = data.filter((student) => student.id == studentId)
+    response.send(student)
+})
 
 // POST
 app.post('/create', (request, response) => {
@@ -45,7 +52,6 @@ app.delete("/delete", (request, response) => {
 
 app.listen(PORT, () => {
     console.log(`This app is running on port ${PORT}`)
-    console.log(data)
 })
 
 
