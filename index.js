@@ -5,6 +5,16 @@ import * as data from './data/mock.json' assert { type: 'json' };
 const app = express()
 const PORT = 3000;
 
+// Using the public folder at the root of the project
+// bellow folder will be serve from the root directory
+// What if you want to make sepecific route fro your image
+app.use(express.static("public"));
+
+// Using the images folder at the route / images
+// /images denotes a route that it serves content of the image file
+// second argument means we want to pull images from the image folder
+app.use("/images", express.static("images"))
+
 // second argument is handler, once the route gets found, handle should take action
 
 // Have it in your mind that, get is something you can see on the UI
