@@ -10,7 +10,8 @@ const PORT = 3000;
 // Have it in your mind that, get is something you can see on the UI
 // GET
 app.get("/", (request, response) => {
-    response.send("This is a get request at /")
+    // it meas we want to send data to the ui in json format
+    response.json(data)
 })
 
 
